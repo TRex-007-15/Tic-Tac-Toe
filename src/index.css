@@ -1,13 +1,62 @@
 body {
+  font: 14px "Century Gothic", Futura, sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
+  color: #fff;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Set the body height to the full viewport height */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #111; /* Darken the background color for the game */
+  border-radius: 20px; /* Add rounded corners to the game box */
+  padding: 20px; /* Add padding to the game box */
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 5px solid #00f;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 50px; /* Increase the line-height for a larger square */
+  height: 50px; /* Increase the height for a larger square */
+  margin: 5px; /* Add margin for spacing between squares */
+  padding: 0;
+  text-align: center;
+  width: 50px; /* Increase the width for a larger square */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 10px; /* Add rounded corners to the squares */
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.square:hover {
+  background-color: #ddd;
+}
+
+.game-info {
+  margin-left: 20px;
 }
